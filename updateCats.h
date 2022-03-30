@@ -15,10 +15,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+typedef float Weight;
 extern int updateCatName(int index, const char* newName);
 extern bool fixCat(int index);
-extern float updateCatWeight( int index, float newWeight);
+extern Weight updateCatWeight( int index, Weight newWeight);
 extern int updateCatCollar1 (int index, int newColor);
 extern int updateCatCollar2 (int index, int newColor);
 extern int updateLicense( int index, unsigned long long newLicense);

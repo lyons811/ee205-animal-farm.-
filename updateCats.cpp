@@ -41,7 +41,7 @@ bool fixCat(int index) {
     return 0;
 }
 
-float updateCatWeight (int index , float newWeight) {
+Weight updateCatWeight (int index , Weight newWeight) {
     if (newWeight <= 0) {
         fprintf( stderr, "%s: Weight can not be less then or equal to 0!\n", PROGRAM_NAME ) ;
         return 0;

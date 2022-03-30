@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include "updateCats.h"
 
 #define MAX_CAT 1024
 #define MAX_CAT_NAME 50
@@ -31,7 +32,7 @@ struct cat {
     enum color collarColor2;
     unsigned long long license;
     bool isfixed;
-    float weight;
+    Weight weight;
 };
 
 extern struct cat cats[MAX_CAT];

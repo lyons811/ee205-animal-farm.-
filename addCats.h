@@ -16,7 +16,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "updateCats.h"
 
 
 
-extern int addCat(  const char* name , enum gender gender  , enum breed breed,  bool isfixed , float weight,  enum color collarColor1 , enum color collarColor2, unsigned long long license );
+extern int addCat(  const char* name , enum gender gender  , enum breed breed,  bool isfixed , Weight weight,  enum color collarColor1 , enum color collarColor2, unsigned long long license );
