@@ -13,13 +13,14 @@
 
 
 
-#include <stdio.h>
-#include <stdbool.h>
-#include "updateCats.h"
+#include <cstdio>
 
+#include "updateCats.h"
+#include "reportCats.h"
 #define MAX_CAT 1024
 #define MAX_CAT_NAME 50
-
+typedef float Weight;
+typedef size_t NumCats;
 enum gender{UNKNOWN_GENDER, MALE, FEMALE};
 enum breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 enum color{BLACK, WHITE, RED, BLUE, GREEN, PINK};
@@ -36,6 +37,6 @@ struct cat {
 };
 
 extern struct cat cats[MAX_CAT];
-extern size_t size ;
-extern size_t sizearray ;
+extern NumCats size ;
+extern NumCats sizearray ;
 

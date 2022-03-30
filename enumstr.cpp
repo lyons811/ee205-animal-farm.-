@@ -8,10 +8,7 @@
 /// @author Lyon Singleton <lyonws@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include <stdio.h>
-#include <stdlib.h>
 #include "catDatabase.h"
-#include "addCats.h"
 #include "enumstr.h"
 
 const char* GenderToString(enum gender gender) {

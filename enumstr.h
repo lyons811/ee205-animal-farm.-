@@ -9,8 +9,8 @@
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 extern const char* GenderToString(enum gender gender) ;
 

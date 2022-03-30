@@ -8,8 +8,7 @@
 /// @author Lyon Singleton <lyonws@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include <stdio.h>
-#include <stdbool.h>
+#include <cstdio>
 #include "catDatabase.h"
 #include "updateCats.h"
 
@@ -18,6 +17,6 @@
 
 
 struct cat cats[MAX_CAT];
-size_t sizearray = sizeof(cats) ;
-size_t size = 0 ;
+NumCats sizearray = sizeof(cats) ;
+NumCats size = 0 ;
 

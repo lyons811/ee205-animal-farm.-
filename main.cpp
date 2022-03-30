@@ -15,9 +15,9 @@
 
 
 
-#include <stdio.h>
-#include <stdlib.h> // For EXIT_SUCCESS / EXIT_FAILURE
-#include <assert.h> // For assert()
+#include <cstdio>
+#include <cstdlib> // For EXIT_SUCCESS / EXIT_FAILURE
+#include <cassert> // For assert()
 #include "config.h"
 #include "catDatabase.h"
 #include "addCats.h"

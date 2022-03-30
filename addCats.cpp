@@ -9,10 +9,9 @@
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "addCats.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
 #include "catDatabase.h"
-#include <string.h>
+#include <cstring>
 #include "config.h"
 #include "updateCats.h"
 

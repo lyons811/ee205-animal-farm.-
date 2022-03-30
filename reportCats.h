@@ -13,8 +13,8 @@
 
 
 #include "catDatabase.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 
 extern void printCat(int index);

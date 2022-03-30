@@ -10,9 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "updateCats.h"
 #include "catDatabase.h"
 #include "config.h"

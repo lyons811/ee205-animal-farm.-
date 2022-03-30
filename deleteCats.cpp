@@ -8,13 +8,10 @@
 /// @author Lyon Singleton <lyonws@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "deleteCats.h"
 #include "catDatabase.h"
-#include "config.h"
-#include "reportCats.h"
 
 void deleteAllCats() {
     printf("Deleteing Cats\n");

@@ -8,11 +8,11 @@
 /// @author Lyon Singleton <lyonws@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "reportCats.h"
 #include "catDatabase.h"
-#include <string.h>
+#include <cstring>
 #include "addCats.h"
 #include "deleteCats.h"
 #include "config.h"

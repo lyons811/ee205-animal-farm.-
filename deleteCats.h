@@ -14,7 +14,7 @@
 
 
 #include "catDatabase.h"
-#include <stdio.h>
+#include <cstdio>
 
 
 

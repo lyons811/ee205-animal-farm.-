@@ -12,10 +12,13 @@
 
 
 #include "catDatabase.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
+#include <cstdio>
+#include <cstdlib>
+
+
 typedef float Weight;
+
+
 extern int updateCatName(int index, const char* newName);
 extern bool fixCat(int index);
 extern Weight updateCatWeight( int index, Weight newWeight);
