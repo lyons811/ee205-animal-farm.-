@@ -24,11 +24,14 @@
 #include "reportCats.h"
 #include "updateCats.h"
 #include "deleteCats.h"
+#include <iostream>
+using namespace std ;
+
 #define MAX_NAME1 "1234567890123456789012345678901234567890123456789"
 #define MAX_NAME2 "DIFFERENT 123456789012345678901234567890123456789"
 #define ILLEGAL_NAME "12345678901234567890123456789012345678901234567890"
 int main() {
-    printf( "Starting %s\n", PROGRAM_NAME ) ;
+    cout << "Starting " << PROGRAM_NAME << endl ;
     addCat( "Loki", MALE, PERSIAN, true, 8.5, BLACK, WHITE, 101 ) ;
     addCat( "Milo", MALE, MANX, true, 7.0, BLACK, RED, 102 ) ;
     addCat( "Bella", FEMALE, MAINE_COON, true, 18.2, BLACK, BLUE, 103 ) ;
@@ -49,6 +52,6 @@ int main() {
     printAllCats() ;
     deleteAllCats() ;
     printAllCats() ;
-    printf( "Done with %s\n", PROGRAM_NAME ) ;
+    cout << "Done with " << PROGRAM_NAME << endl ;
     return( EXIT_SUCCESS ) ;
 }

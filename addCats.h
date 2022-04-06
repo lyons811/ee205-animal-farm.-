@@ -17,6 +17,9 @@
 #include <cstdlib>
 
 #include "updateCats.h"
+#include <iostream>
+using namespace std ;
+
 
 
 

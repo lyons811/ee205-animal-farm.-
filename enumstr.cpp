@@ -10,6 +10,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "catDatabase.h"
 #include "enumstr.h"
+#include <iostream>
+using namespace std ;
+
 
 const char* GenderToString(enum gender gender) {
 

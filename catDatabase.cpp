@@ -11,6 +11,8 @@
 #include <cstdio>
 #include "catDatabase.h"
 #include "updateCats.h"
+#include <iostream>
+using namespace std ;
 
 
 

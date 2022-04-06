@@ -17,6 +17,8 @@
 #include "deleteCats.h"
 #include "config.h"
 #include "enumstr.h"
+#include <iostream>
+using namespace std ;
 #define numArrElements(cats)  (sizeof(cats) / sizeof(cats[0]))
 
 
@@ -26,21 +28,21 @@
 
 void printCat(int index) {
     if (index < 0 || index > MAX_CAT -1 ) {
-        fprintf( stderr, "%s: Invalid index of %s \n", PROGRAM_NAME, index ) ;
+        cout << stderr <<  PROGRAM_NAME << "Invalid index of " << index << endl ;
         return;
     }
-    printf("cat index = [%u] name=[%s] gender=[%s] breed=[%s] isFixed=[%d] weight=[%f] color1=[%s] color2=[%s]  license=[%d]\n", index , cats[index].name, GenderToString(cats[index].gender), BreedToString(cats[index].breed), cats[index].isfixed, cats[index].weight, ColorToString(cats[index].collarColor1), ColorToString(cats[index].collarColor2), cats[index].license) ;
+    cout << "cat index = " << index <<  " name = " << cats[index].name <<  " gender = " << GenderToString(cats[index].gender) << " breed = " <<  BreedToString(cats[index].breed) <<  " isFixed = " << cats[index].isfixed <<  " weight = " << cats[index].weight <<  " color1 = " << ColorToString(cats[index].collarColor1) <<  " color2 = " <<  ColorToString(cats[index].collarColor2) << " license = " <<  cats[index].license << endl ;
 }
 
 
 void printAllCats() {
     if (size == 0) {
-        printf("No cats in database!\n");
+        cout << "No cats in database!" << endl;
         return ;
     }
     for(int i = 0; i < size; i++) {
 
-        printf("cat index = [%u] name=[%s] gender=[%s] breed=[%s] isFixed=[%d] weight=[%f] color1=[%s] color2=[%s]  license=[%d]\n", i , cats[i].name, GenderToString(cats[i].gender), BreedToString(cats[i].breed), cats[i].isfixed, cats[i].weight, ColorToString(cats[i].collarColor1), ColorToString(cats[i].collarColor2), cats[i].license) ;
+        cout << "cat index = " << i <<  " name = " << cats[i].name <<  " gender = " << GenderToString(cats[i].gender) << " breed = " <<  BreedToString(cats[i].breed) <<  " isFixed = " << cats[i].isfixed <<  " weight = " << cats[i].weight <<  " color1= " << ColorToString(cats[i].collarColor1) <<  " color2 = " <<  ColorToString(cats[i].collarColor2) << " license = " <<  cats[i].license << endl ;
     }
 }
 
@@ -49,14 +51,11 @@ int findCat( const char* name) {
     for (int i = 0; i < size; ++i) {
 
         if (strcmp(cats[i].name, name) == 0) {
-            printf("cat index = [%u] name=[%s] gender=[%s] breed=[%s] isFixed=[%d] weight=[%f] color1=[%s] color2=[%s]  license=[%d]\n",
-                   i, cats[i].name, GenderToString(cats[i].gender), BreedToString(cats[i].breed), cats[i].isfixed,
-                   cats[i].weight, ColorToString(cats[i].collarColor1), ColorToString(cats[i].collarColor2),
-                   cats[i].license);
+            cout << "cat index = " << i <<  " name = " << cats[i].name <<  " gender = " << GenderToString(cats[i].gender) << " breed = " <<  BreedToString(cats[i].breed) <<  " isFixed = " << cats[i].isfixed <<  " weight = " << cats[i].weight <<  " color1= " << ColorToString(cats[i].collarColor1) <<  " color2 = " <<  ColorToString(cats[i].collarColor2) << " license = " <<  cats[i].license << endl ;
             return i;
         }
 
     }
-    fprintf(stderr, "%s: Cat name [%s] is not in the database.\n", PROGRAM_NAME, name);
+    cout << stderr << PROGRAM_NAME << ": " <<  "Cat name" <<  name << "is not in the database." << endl ;
     return 0;
 }

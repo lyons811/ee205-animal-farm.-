@@ -14,26 +14,28 @@
 #include <cstring>
 #include "config.h"
 #include "updateCats.h"
+#include <iostream>
+using namespace std ;
 
 
 int addCat( const char* name , enum gender gender  , enum breed breed,  bool isfixed , Weight weight,  enum color collarColor1 , enum color collarColor2, unsigned long long license  ) {
 
 
     if (strlen(name) == 0) {
-        fprintf( stderr, "%s: Cat must have a name!\n", PROGRAM_NAME ) ;
+        cout << stderr << "%s: Cat must have a name!\n"<< PROGRAM_NAME << endl ;
         return 0;
     }
 
     if (sizearray == MAX_CAT - 1) {
-        fprintf( stderr, "%s: Database is full!\n", PROGRAM_NAME) ;
+        cout << stderr << "%s: Database is full!\n" << PROGRAM_NAME << endl ;
         return 0;
     }
     if (strlen(name) >= MAX_CAT_NAME - 1) {
-        fprintf( stderr, "%s: Cat name [%s] is more then 50 letters!\n", PROGRAM_NAME, name ) ;
+        cout << stderr << "%s: Cat name [%s] is more then 50 letters!\n" << PROGRAM_NAME << name << endl;
         return 0;
     }
     if (weight <= 0) {
-        fprintf( stderr, "%s: Weight can not be less then or equal to 0!\n", PROGRAM_NAME ) ;
+        cout << stderr << "%s: Weight can not be less then or equal to 0!\n"<< PROGRAM_NAME << endl;
         return 0;
     }
 

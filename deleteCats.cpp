@@ -12,11 +12,14 @@
 #include <cstring>
 #include "deleteCats.h"
 #include "catDatabase.h"
+#include <iostream>
+using namespace std ;
+
 
 void deleteAllCats() {
-    printf("Deleteing Cats\n");
+    cout << "Deleteing Cats" << endl;
     memset(cats, 0, sizeof(cats));
     size = 0;
-    printf("All Cats Deleted\n");
+    cout << "All Cats Deleted" << endl;
 
 }

@@ -11,6 +11,9 @@
 #pragma once
 #include <cstdio>
 #include <cstdlib>
+#include <iostream>
+using namespace std ;
+
 
 extern const char* GenderToString(enum gender gender) ;
 
