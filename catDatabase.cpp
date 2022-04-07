@@ -18,7 +18,7 @@ using namespace std ;
 
 
 
-struct cat cats[MAX_CAT];
+//struct cat cats[MAX_CAT];
 NumCats sizearray = sizeof(cats) ;
 NumCats size = 0 ;
 

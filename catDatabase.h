@@ -17,28 +17,20 @@ using namespace std ;
 
 #include <cstdio>
 
-#include "updateCats.h"
+
 #include "reportCats.h"
 #define MAX_CAT 1024
 #define MAX_CAT_NAME 50
 typedef float Weight;
 typedef size_t NumCats;
-enum gender{UNKNOWN_GENDER, MALE, FEMALE};
-enum breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
-enum color{BLACK, WHITE, RED, BLUE, GREEN, PINK};
+const Weight UNKNOWN_WEIGHT = -1;
 
-struct cat {
-    const char* name ;
-    enum gender gender;
-    enum breed breed;
-    enum color collarColor1;
-    enum color collarColor2;
-    unsigned long long license;
-    bool isfixed;
-    Weight weight;
-};
+enum Gender{UNKNOWN_GENDER, MALE, FEMALE};
+enum Breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
+enum Color{BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
-extern struct cat cats[MAX_CAT];
+
+
 extern NumCats size ;
 extern NumCats sizearray ;
 
