@@ -14,7 +14,7 @@
 using namespace std ;
 
 
-const char* GenderToString(enum gender gender) {
+const char* GenderToString(enum Gender gender) {
 
     switch (gender) {
         case UNKNOWN_GENDER :
@@ -29,7 +29,7 @@ const char* GenderToString(enum gender gender) {
 }
 
 
-const char* BreedToString( enum breed breed) {
+const char* BreedToString( enum Breed breed) {
 
     switch (breed) {
         case UNKNOWN_BREED :
@@ -51,7 +51,7 @@ const char* BreedToString( enum breed breed) {
 
 
 
-const char* ColorToString( enum color color) {
+const char* ColorToString( enum Color color) {
 
     switch (color) {
         case BLACK :

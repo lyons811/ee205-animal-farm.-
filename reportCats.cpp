@@ -18,44 +18,38 @@
 #include "config.h"
 #include "enumstr.h"
 #include <iostream>
+#include <cassert>
+#include "Cat.h"
 using namespace std ;
 #define numArrElements(cats)  (sizeof(cats) / sizeof(cats[0]))
 
 
 
-
-
-
-void printCat(int index) {
-    if (index < 0 || index > MAX_CAT -1 ) {
-        cout << stderr <<  PROGRAM_NAME << "Invalid index of " << index << endl ;
-        return;
-    }
-    cout << "cat index = " << index <<  " name = " << cats[index].name <<  " gender = " << GenderToString(cats[index].gender) << " breed = " <<  BreedToString(cats[index].breed) <<  " isFixed = " << cats[index].isfixed <<  " weight = " << cats[index].weight <<  " color1 = " << ColorToString(cats[index].collarColor1) <<  " color2 = " <<  ColorToString(cats[index].collarColor2) << " license = " <<  cats[index].license << endl ;
-}
-
-
-void printAllCats() {
+bool printAllCats() {
     if (size == 0) {
         cout << "No cats in database!" << endl;
-        return ;
+        return false;
     }
-    for(int i = 0; i < size; i++) {
+    int numCats = 0 ;
+    assert(validateDatabase()) ;
+    for(Cat* SomeCat = HeadPointer ; SomeCat != nullptr ; SomeCat = SomeCat->next){
+        SomeCat->print();
+        numCats++;
 
-        cout << "cat index = " << i <<  " name = " << cats[i].name <<  " gender = " << GenderToString(cats[i].gender) << " breed = " <<  BreedToString(cats[i].breed) <<  " isFixed = " << cats[i].isfixed <<  " weight = " << cats[i].weight <<  " color1= " << ColorToString(cats[i].collarColor1) <<  " color2 = " <<  ColorToString(cats[i].collarColor2) << " license = " <<  cats[i].license << endl ;
     }
+    assert(validateDatabase());
+    return true;
 }
 
-int findCat( const char* name) {
+Cat* findCat( const char* name) {
+    assert(Cat().validateName(name)) ;
 
-    for (int i = 0; i < size; ++i) {
 
-        if (strcmp(cats[i].name, name) == 0) {
-            cout << "cat index = " << i <<  " name = " << cats[i].name <<  " gender = " << GenderToString(cats[i].gender) << " breed = " <<  BreedToString(cats[i].breed) <<  " isFixed = " << cats[i].isfixed <<  " weight = " << cats[i].weight <<  " color1= " << ColorToString(cats[i].collarColor1) <<  " color2 = " <<  ColorToString(cats[i].collarColor2) << " license = " <<  cats[i].license << endl ;
-            return i;
+    for(Cat* SomeCat = HeadPointer ; SomeCat != nullptr ; SomeCat = SomeCat->next){
+        if(strcmp(name, SomeCat->getName()) == 0) {
+            return SomeCat ;
         }
-
     }
-    cout << stderr << PROGRAM_NAME << ": " <<  "Cat name" <<  name << "is not in the database." << endl ;
-    return 0;
+        return nullptr ;
 }
+

@@ -12,8 +12,9 @@
 
 #include "config.h"
 #include "catDatabase.h"
+#include "enumstr.h"
 using namespace std;
-
+const Weight UNKNOWN_WEIGHT = 1- ;
 class Cat {
 
 protected:
@@ -24,7 +25,7 @@ protected:
     Weight weight ;
 
 public:
-    Cat* next;
+    Cat* next ;
 
 private:
     void zeroOutMemberData();

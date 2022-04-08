@@ -13,13 +13,14 @@
 
 
 #include "Cat.h"
+#include "config.h"
 #include <cstdio>
 #include <cstdlib>
 
 extern const char* genderName(enum Gender gender);
 extern const char* breedName(enum Breed breed);
-extern void printCat(int index);
 
-extern void printAllCats();
 
-extern int findCat( const char* name);
+extern bool printAllCats();
+
+extern Cat* findCat( const char* name);

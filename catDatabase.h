@@ -16,18 +16,26 @@ using namespace std ;
 
 
 #include <cstdio>
+#include <cstddef>
+#include "Cat.h"
+using namespace std;
 
-
-#include "reportCats.h"
 #define MAX_CAT 1024
 #define MAX_CAT_NAME 50
 typedef float Weight;
 typedef size_t NumCats;
-const Weight UNKNOWN_WEIGHT = -1;
 
-enum Gender{UNKNOWN_GENDER, MALE, FEMALE};
-enum Breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
-enum Color{BLACK, WHITE, RED, BLUE, GREEN, PINK};
+class Cat;
+
+extern Cat* HeadPointer;
+extern void StartDatabase() ;
+extern bool isCatInDatabase(const Cat* SomeCat) ;
+extern bool validateDatabase();
+
+
+
+
+
 
 
 

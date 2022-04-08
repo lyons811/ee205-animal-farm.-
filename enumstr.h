@@ -15,8 +15,14 @@
 using namespace std ;
 
 
-extern const char* GenderToString(enum gender gender) ;
 
-extern const char* BreedToString( enum breed breed) ;
+enum Gender{UNKNOWN_GENDER, MALE, FEMALE};
+enum Breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
+enum Color{BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
-extern const char* ColorToString( enum color color) ;
+
+extern const char* GenderToString(enum Gender gender) ;
+
+extern const char* BreedToString( enum Breed breed) ;
+
+extern const char* ColorToString( enum Color color) ;
