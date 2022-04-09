@@ -15,50 +15,23 @@
 #include "config.h"
 #include "updateCats.h"
 #include <iostream>
+#include <cassert>
+
 using namespace std ;
 
 
-int addCat( const char* name , enum gender gender  , enum breed breed,  bool isfixed , Weight weight,  enum color collarColor1 , enum color collarColor2, unsigned long long license  ) {
-
-
-    if (strlen(name) == 0) {
-        cout << stderr << "%s: Cat must have a name!\n"<< PROGRAM_NAME << endl ;
-        return 0;
+bool addCat(Cat* newCat) {
+    assert(newCat != nullptr) ;
+    newCat->validate() ;
+    if(isCatInDatabase(newCat)) {
+        throw logic_error(PROGRAM_NAME ": Cat is in the database already!") ;
     }
 
-    if (sizearray == MAX_CAT - 1) {
-        cout << stderr << "%s: Database is full!\n" << PROGRAM_NAME << endl ;
-        return 0;
-    }
-    if (strlen(name) >= MAX_CAT_NAME - 1) {
-        cout << stderr << "%s: Cat name [%s] is more then 50 letters!\n" << PROGRAM_NAME << name << endl;
-        return 0;
-    }
-    if (weight <= 0) {
-        cout << stderr << "%s: Weight can not be less then or equal to 0!\n"<< PROGRAM_NAME << endl;
-        return 0;
-    }
-
-
-
-
-
-    cats[size].name = name;
-    cats[size].gender = gender;
-    cats[size].breed = breed;
-    cats[size].isfixed = isfixed;
-    cats[size].weight = weight;
-    cats[size].collarColor1 = collarColor1;
-    cats[size].collarColor2 = collarColor2;
-    cats[size].license = license;
-
-
-
-
-    size++;
-
-
-    return size - 1;
-
-} ;
+    assert(validateDatabase()) ;
+    newCat->next = HeadPointer ;
+    HeadPointer = newCat ;
+    size++ ;
+    assert(validateDatabase()) ;
+    return true ;
+}
 

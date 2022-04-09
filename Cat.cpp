@@ -14,6 +14,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cassert>
+#include "reportCats.h"
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 Cat::Cat() {
