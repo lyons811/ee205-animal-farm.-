@@ -1,12 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
+/// @brief  ee205_lab_08d_animal_farm_2 - EE 205 - Spr 2022
 ///
 /// @file Cat.cpp
 /// @version 1.0
 ///
 /// @author Lyon Singleton <lyonws@hawaii.edu>
-/// @date   06_Apr_2022
+/// @date  1_April_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Cat.h"
 #include <cstring>
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cassert>
+#include "enumstr.h"
 #include "reportCats.h"
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
@@ -139,7 +140,7 @@ bool Cat::validateName(const char *newName) {
     }
 
     if(strlen(newName) >= MAX_CAT_NAME) {
-        throw length_error(PROGRAM_NAME ": name must be less then MAX_CAT_NAME letters!") ;
+        throw length_error(PROGRAM_NAME ": name must be less then 50 letters!") ;
     }
 
 

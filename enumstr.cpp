@@ -6,15 +6,16 @@
 /// @version 1.0
 ///
 /// @author Lyon Singleton <lyonws@hawaii.edu>
-/// @date   20_Mar_2022
+/// @date   1_April_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "catDatabase.h"
 #include "enumstr.h"
+#include "Cat.h"
 #include <iostream>
 using namespace std ;
 
 
-const char* GenderToString(enum Gender gender) {
+const char* genderName(enum Gender gender) {
 
     switch (gender) {
         case UNKNOWN_GENDER :
@@ -29,7 +30,7 @@ const char* GenderToString(enum Gender gender) {
 }
 
 
-const char* BreedToString( enum Breed breed) {
+const char* breedName( enum Breed breed) {
 
     switch (breed) {
         case UNKNOWN_BREED :

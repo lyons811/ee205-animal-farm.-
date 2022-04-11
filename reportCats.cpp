@@ -6,7 +6,7 @@
 /// @version 1.0
 ///
 /// @author Lyon Singleton <lyonws@hawaii.edu>
-/// @date   20_Mar_2022
+/// @date   1_April_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include <cstdio>
 #include <cstdlib>
@@ -37,6 +37,11 @@ bool printAllCats() {
         numCats++;
 
     }
+#ifdef DEBUG
+    cout << "number of cats = [" << numCats << "]" << endl;
+#endif
+
+
     assert(validateDatabase());
     return true;
 }

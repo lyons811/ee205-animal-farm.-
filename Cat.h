@@ -1,20 +1,22 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_lab_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
+/// @brief  ee205_lab_08d_animal_farm_2 - EE 205 - Spr 2022
 ///
 /// @file Cat.h
 /// @version 1.0
 ///
 /// @author Lyon Singleton <lyonws@hawaii.edu>
-/// @date   06_Apr_2022
+/// @date   1_April_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include "config.h"
 #include "catDatabase.h"
 #include "enumstr.h"
+#define MAX_CAT_NAME 50
 using namespace std;
-const Weight UNKNOWN_WEIGHT = 1- ;
+typedef float Weight ;
+const Weight UNKNOWN_WEIGHT = -1 ;
 class Cat {
 
 protected:

@@ -6,12 +6,13 @@
 /// @version 1.0
 ///
 /// @author Lyon Singleton <lyonws@hawaii.edu>
-/// @date   20_Mar_2022
+/// @date   1_April_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
+#include "Cat.h"
 using namespace std ;
 
 
@@ -21,8 +22,8 @@ enum Breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 enum Color{BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
 
-extern const char* GenderToString(enum Gender gender) ;
+extern const char* genderName(enum Gender gender) ;
 
-extern const char* BreedToString( enum Breed breed) ;
+extern const char* breedName( enum Breed breed) ;
 
 extern const char* ColorToString( enum Color color) ;

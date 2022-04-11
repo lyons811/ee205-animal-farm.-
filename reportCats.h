@@ -6,7 +6,7 @@
 /// @version 1.0
 ///
 /// @author Lyon Singleton <lyonws@hawaii.edu>
-/// @date   20_Mar_2022
+/// @date   1_April_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
@@ -17,8 +17,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-extern const char* genderName(enum Gender gender);
-extern const char* breedName(enum Breed breed);
+
 
 
 extern bool printAllCats();
