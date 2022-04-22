@@ -15,8 +15,13 @@
 #include <iomanip>
 #include <cassert>
 #include "enumstr.h"
-#include "reportCats.h"
+using namespace std ;
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
+
+
+const string Cat::SPECIES_NAME = "Felis Catus";
+const Weight::t_weight Cat::MAX_WEIGHT = 40;
+
 
 Cat::Cat() {
     zeroOutMemberData() ;

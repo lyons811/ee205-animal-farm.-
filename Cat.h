@@ -11,12 +11,14 @@
 #pragma once
 
 #include "config.h"
-#include "catDatabase.h"
+
 #include "enumstr.h"
+#include "Weight.h"
+#include <string>
 #define MAX_CAT_NAME 50
 using namespace std;
-typedef float Weight ;
-const Weight UNKNOWN_WEIGHT = -1 ;
+
+
 class Cat {
 
 protected:
@@ -46,6 +48,9 @@ public:
     void fixCat() noexcept ;
     Weight getWeight() const noexcept ;
     void setWeight(Weight newWeight) ;
+    static const Weight::t_weight MAX_WEIGHT ;
+    static const string SPECIES_NAME ;
+
 
 protected:
 

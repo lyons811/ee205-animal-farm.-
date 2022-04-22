@@ -2,24 +2,10 @@
 ///         University of Hawaii, College of Engineering
 /// @brief  ee205_lab_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
 ///
-/// @file reportCats.h
+/// @file SinglyLinkedList.cpp
 /// @version 1.0
 ///
 /// @author Lyon Singleton <lyonws@hawaii.edu>
-/// @date   1_April_2022
+/// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-#pragma once
-
-
-
-#include "Cat.h"
-#include "config.h"
-#include <cstdio>
-#include <cstdlib>
-
-
-
-
-extern bool printAllCats();
-
-extern Cat* findCat( const char* name);
+#include "SinglyLinkedList.h"
