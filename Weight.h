@@ -13,6 +13,7 @@
 
 #include <string>
 #include <ostream>
+#include "Animal.h"
 
 using namespace std ;
 
@@ -38,7 +39,7 @@ public:
     bool hasMaxWeight () const noexcept ;
     float 	getWeight () const noexcept ;
     float 	getWeight (UnitOfWeight weightUnits) const noexcept;
-    float 	getMaxWeight () const noexcept ;
+    t_weight getMaxWeight () const noexcept ;
     UnitOfWeight getWeightUnit () const noexcept ;
     void setWeight (float newWeight) ;
     void 	setWeight (float newWeight, UnitOfWeight weightUnits) ;
@@ -57,6 +58,9 @@ public:
     static float convertWeight(float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit) noexcept ;
 
     void setUnitOfWeight(UnitOfWeight unitOfWeight);
+
+
+
 
 private:
     void setMaxWeight(float newMaxWeight);

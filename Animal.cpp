@@ -12,6 +12,10 @@
 #include <iostream>
 #include "Weight.h"
 #include "Mammal.h"
+#include <cassert>
+#include <stdexcept>
+#include <iostream>
+#include <iomanip>
 
 const string Animal::KINGDOM_NAME = "Animalia";
 
@@ -64,10 +68,11 @@ bool Animal::validate() const noexcept {
     try {
         validateClassification(classification) ;
         validateSpecies(species) ;
-    } catch (exception const& e) {
+    } catch (exception const& e){
         cout << e.what() << endl ;
         return false ;
     }
+
     return true ;
 }
 
@@ -89,3 +94,5 @@ bool Animal::validateSpecies(const string &checkSpecies) noexcept {
 void Animal::setGender(const Gender newGender) {
     gender = newGender ;
 }
+
+Animal::Animal() = default;

@@ -26,7 +26,7 @@ protected:
     enum Gender gender ;
     enum Breed breed ;
     bool isfixed ;
-    Weight weight ;
+    Weight::t_weight weight ;
 
 public:
     Cat* next ;
@@ -46,7 +46,7 @@ public:
     Breed getBreed() const noexcept ;
     bool isFixed() const noexcept ;
     void fixCat() noexcept ;
-    Weight getWeight() const noexcept ;
+    Weight::t_weight getWeight() const noexcept ;
     void setWeight(Weight newWeight) ;
     static const Weight::t_weight MAX_WEIGHT ;
     static const string SPECIES_NAME ;

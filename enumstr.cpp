@@ -67,6 +67,8 @@ const char* ColorToString( enum Color color) {
             return "Green" ;
         case PINK :
             return "Pink" ;
+        case UNKOWN_COLOR:
+            return "Unknown Color" ;
         default :
             return "Invalid" ;
     }

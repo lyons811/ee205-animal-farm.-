@@ -19,7 +19,7 @@ using namespace std ;
 
 enum Gender{UNKNOWN_GENDER, MALE, FEMALE};
 enum Breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
-enum Color{BLACK, WHITE, RED, BLUE, GREEN, PINK};
+enum Color{UNKOWN_COLOR, BLACK, WHITE, RED, BLUE, GREEN, PINK};
 
 
 extern const char* genderName(enum Gender gender) ;

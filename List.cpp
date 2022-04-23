@@ -10,3 +10,31 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "List.h"
 #include <iostream>
+
+bool List::empty() const noexcept {
+
+}
+
+unsigned int List::size() const noexcept {
+    return 0;
+}
+
+bool List::isIn(Node *aNode) const {
+    return false;
+}
+
+bool List::isSorted() const noexcept {
+    return false;
+}
+
+Node *List::get_first() const noexcept {
+    return nullptr;
+}
+
+void List::deleteAllNodes() noexcept {
+
+}
+
+Node *List::get_next(const Node *currentNode) {
+    return nullptr;
+}

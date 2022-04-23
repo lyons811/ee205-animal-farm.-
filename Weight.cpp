@@ -140,7 +140,7 @@ float Weight::getWeight(Weight::UnitOfWeight weightUnits) const noexcept {
     return weightUnits ;
 }
 
-float Weight::getMaxWeight() const noexcept {
+Weight::t_weight Weight::getMaxWeight() const noexcept {
     if(weight == -1) {
         return UNKNOWN_WEIGHT ;
     }
@@ -231,7 +231,10 @@ Weight& Weight::operator+=(float rhs_addToWeight) {
 
 }
 
+
+
 void Weight::setMaxWeight(float newMaxWeight) {
     bHasMax = true ;
     maxWeight = newMaxWeight ;
 }
+

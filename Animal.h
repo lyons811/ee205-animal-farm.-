@@ -24,6 +24,9 @@ public:
     friend class Weight ;
     Animal(Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies ) ;
     Animal(Gender newGender, Weight::t_weight newWeight, Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies ) ;
+
+    Animal();
+
     string getKingdom() const noexcept ;
     string getClassification() const noexcept ;
     string getSpecies() const noexcept ;
