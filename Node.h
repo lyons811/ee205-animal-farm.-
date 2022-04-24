@@ -42,11 +42,12 @@ public:
     }
 
 protected:
+    friend class List ;
+    friend class SinglyLinkedList ;
     static bool compareByAddress(const Node *node1, const Node *node2) {
-        if(node1 > node2) {
-            return true ;
-        }
-        return false ;
+
+        return node1 > node2 ;
+
     }
     Node * next = nullptr ;
 

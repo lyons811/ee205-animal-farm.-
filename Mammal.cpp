@@ -20,7 +20,7 @@ Mammal::Mammal(const Color newColor, const Gender newGender, const Weight::t_wei
 color = newColor ;
 setGender(newGender) ;
 setWeight(newWeight) ;
-
+Weight setMaxWeight(newMaxWeight) ;
 }
 
 Mammal::Mammal(Weight::t_weight newMaxWeight, const string &newSpecies) {

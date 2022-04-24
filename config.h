@@ -14,7 +14,7 @@
 #include <iomanip>
 
 using namespace  std ;
-#define PROGRAM_NAME "Animal Farm 1"
+#define PROGRAM_NAME "Animal Farm 3"
 
 #define FORMAT_LINE_FOR_DUMP( className, member )     \
          cout << setfill( ' ' )                        \

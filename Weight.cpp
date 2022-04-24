@@ -18,7 +18,7 @@ using namespace std ;
 const float Weight::KILOS_IN_A_POUND = 0.453592 ;
 const float Weight::SLUGS_IN_A_POUND = 0.031081 ;
 const float Weight::UNKNOWN_WEIGHT = -1 ;
-const string Weight::POUND_LABEL = "POUND" ;
+const string Weight::POUND_LABEL = "Pound" ;
 const string Weight::KILO_LABEL = "Kilo" ;
 const string Weight::SLUG_LABEL = "Slug" ;
 

@@ -12,6 +12,7 @@
 #pragma once
 #include <iostream>
 #include "Animal.h"
+#include "Node.h"
 
 
 

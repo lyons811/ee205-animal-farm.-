@@ -20,7 +20,7 @@ using namespace std ;
 
 class Weight {
 public:
-    enum UnitOfWeight {POUND, KILO, SLUG};
+    enum UnitOfWeight {Pound, KILO, SLUG};
     typedef float t_weight ;
     static const float KILOS_IN_A_POUND ;
     static const float SLUGS_IN_A_POUND ;
@@ -29,8 +29,8 @@ public:
     static const string KILO_LABEL ;
     static const string SLUG_LABEL ;
     Weight() noexcept ;
-    Weight(t_weight newWeight) ;
-    Weight(UnitOfWeight newUnitOfWeight) noexcept ;
+    explicit Weight(t_weight newWeight) ;
+    explicit Weight(UnitOfWeight newUnitOfWeight) noexcept ;
     Weight (float newWeight, UnitOfWeight newUnitOfWeight) ;
     Weight (float newWeight, float newMaxWeight) ;
     Weight (UnitOfWeight newUnitOfWeight, float newMaxWeight);
@@ -63,10 +63,12 @@ public:
 
 
 private:
+    friend class  Mammal ;
+    friend class Animal ;
     void setMaxWeight(float newMaxWeight);
     bool blsKnown = false ;
     bool bHasMax = false ;
-    enum UnitOfWeight unitOfWeight = POUND ;
+    enum UnitOfWeight unitOfWeight = Pound ;
     t_weight weight {};
     t_weight maxWeight {};
 

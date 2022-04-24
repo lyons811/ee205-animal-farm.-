@@ -10,9 +10,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include "List.h"
+#include "Node.h"
 #include <iostream>
 
-class SinglyLinkedList {
+class SinglyLinkedList : public List {
+public:
+    SinglyLinkedList() ;
+    void push_front(Node * newNode) ;
+    Node * pop_front() noexcept override ;
+    void insert_after(Node *currentNode, Node *newNode) ;
+    void dump() const noexcept override ;
+    bool validate() const noexcept override ;
+
 
 };
 

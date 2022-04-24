@@ -12,29 +12,54 @@
 #include <iostream>
 
 bool List::empty() const noexcept {
-
+    if(size() == 0 ) {
+        return true ;
+    }
+    return false ;
 }
 
 unsigned int List::size() const noexcept {
-    return 0;
+    return count ;
 }
 
 bool List::isIn(Node *aNode) const {
-    return false;
+    Node * curr = head ;
+    for(int i = 0; i < count ; i++ ) {
+        if(aNode == curr ) {
+            return true ;
+        }
+        curr = curr->next ;
+    }
+    return false ;
 }
 
 bool List::isSorted() const noexcept {
-    return false;
+    Node * curr = head ;
+    for(int i = 0; i < count ; i++ ) {
+        if (!Node::compareByAddress(curr, curr->next)){
+            return false ;
+        }
+        curr = curr->next ;
+
+    }
+   return true ;
 }
 
 Node *List::get_first() const noexcept {
-    return nullptr;
+   return head ;
+
 }
 
 void List::deleteAllNodes() noexcept {
 
+    for(int i = 0; i < count ; i++ ) {
+        Node * tempNext = head->next ;
+        delete head ;
+        head = tempNext ;
+    }
 }
 
+
 Node *List::get_next(const Node *currentNode) {
-    return nullptr;
+    return currentNode->next ;
 }

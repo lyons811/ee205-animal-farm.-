@@ -23,6 +23,7 @@ const string Animal::KINGDOM_NAME = "Animalia";
 Animal::Animal(Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies) {
     classification = newClassification ;
     species = newSpecies ;
+    Weight setMaxWeight(newMaxWeight) ;
 }
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
@@ -32,7 +33,7 @@ Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const W
     Animal::setWeight(newWeight) ;
     classification = newClassification ;
     species = newSpecies ;
-
+    Weight setMaxWeight(newMaxWeight) ;
 
 }
 
@@ -95,4 +96,4 @@ void Animal::setGender(const Gender newGender) {
     gender = newGender ;
 }
 
-Animal::Animal() = default;
+
