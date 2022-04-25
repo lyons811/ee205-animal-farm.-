@@ -25,16 +25,6 @@ const string Weight::SLUG_LABEL = "Slug" ;
 
 
 
-int main () {
-    Weight weight( 0.5, Weight::KILO, 2 ) ;
-    weight.dump();
-
-
-    return 0;
-}
-
-
-
 float Weight::fromKilogramToPound(const float kilogram) noexcept {
     return kilogram / KILOS_IN_A_POUND;
 }
@@ -62,7 +52,7 @@ float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Wei
         case SLUG :
             pounds = fromSlugToPound(fromWeight);
             break;
-        case POUND :
+        case Pound :
             break ;
     }
     // convert to desired unit
@@ -71,7 +61,7 @@ float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Wei
             return fromPoundToKilogram(pounds);
         case SLUG :
             return fromPoundToSlug(pounds);
-        case POUND :
+        case Pound :
             break ;
     }
 
@@ -137,14 +127,14 @@ float Weight::getWeight() const noexcept {
 }
 
 float Weight::getWeight(Weight::UnitOfWeight weightUnits) const noexcept {
-    return weightUnits ;
+    return convertWeight(weight, unitOfWeight, weightUnits) ;
 }
 
 Weight::t_weight Weight::getMaxWeight() const noexcept {
-    if(weight == -1) {
-        return UNKNOWN_WEIGHT ;
-    }
-    return maxWeight ;
+   return maxWeight ;
+
+
+
 }
 
 Weight::UnitOfWeight Weight::getWeightUnit() const noexcept {
@@ -187,7 +177,7 @@ bool Weight::validate() const noexcept {
 void Weight::dump() const {
     string weightUnit;
     switch (getWeightUnit()) {
-        case POUND:
+        case Pound:
             weightUnit = "POUND" ;
             break ;
         case KILO :
@@ -208,15 +198,15 @@ void Weight::dump() const {
 }
 
 bool Weight::operator==(const Weight &rhs_Weight) const {
-    float lhs_weight = (blsKnown) ? getWeight(Weight::POUND) : 0;
-    float rhs_weight = (rhs_Weight.blsKnown) ? rhs_Weight.getWeight(Weight::POUND) : 0;
+    float lhs_weight = (blsKnown) ? getWeight(Weight::Pound) : 0;
+    float rhs_weight = (rhs_Weight.blsKnown) ? rhs_Weight.getWeight(Weight::Pound) : 0;
 
     return lhs_weight == rhs_weight;
 }
 
 bool Weight::operator<(const Weight &rhs_Weight) const {
-    float lhs_weight = (blsKnown) ? getWeight(Weight::POUND) : 0;
-    float rhs_weight = (rhs_Weight.blsKnown) ? rhs_Weight.getWeight(Weight::POUND) : 0;
+    float lhs_weight = (blsKnown) ? getWeight(Weight::Pound) : 0;
+    float rhs_weight = (rhs_Weight.blsKnown) ? rhs_Weight.getWeight(Weight::Pound) : 0;
 
     return lhs_weight < rhs_weight ;
 
@@ -226,7 +216,7 @@ Weight& Weight::operator+=(float rhs_addToWeight) {
     if (weight == -1) {
         throw std::out_of_range("Weight is invalid") ;
     }
-    float lhs_weight = (blsKnown) ? getWeight(Weight::POUND) : 0;
+    float lhs_weight = (blsKnown) ? getWeight(Weight::Pound) : 0;
     return reinterpret_cast<Weight &>(lhs_weight += rhs_addToWeight);
 
 }

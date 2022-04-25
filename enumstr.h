@@ -12,14 +12,15 @@
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-#include "Cat.h"
+
 using namespace std ;
 
 
 
 enum Gender{UNKNOWN_GENDER, MALE, FEMALE};
 enum Breed{UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
-enum Color{UNKOWN_COLOR, BLACK, WHITE, RED, BLUE, GREEN, PINK};
+enum class Color { UNKNOWN_COLOR=0, BLACK, BROWN, WHITE, RED, BLUE, GREEN, GINGER, CREAM, CINNAMON, CALICO} ;
+
 
 
 extern const char* genderName(enum Gender gender) ;

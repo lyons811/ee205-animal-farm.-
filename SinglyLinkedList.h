@@ -11,10 +11,12 @@
 #pragma once
 #include "List.h"
 #include "Node.h"
+#include "Animal.h"
 #include <iostream>
 
 class SinglyLinkedList : public List {
 public:
+    friend class Node ;
     SinglyLinkedList() ;
     void push_front(Node * newNode) ;
     Node * pop_front() noexcept override ;

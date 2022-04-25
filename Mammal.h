@@ -15,17 +15,16 @@
 using namespace std ;
 
 
-class Mammal : public Animal{
+class Mammal : public Animal {
 public:
     static const string MAMMAL_NAME ;
-    Mammal(Weight::t_weight newMaxWeight, const string &newSpecies) ;
-    Mammal(Color newColor, Gender newGender, Weight::t_weight newWeight, Weight::t_weight newMaxWeight, const string &newSpecies) ;
+    Mammal(Weight::t_weight newMaxWeight,  const string& newSpecies) ;
+    Mammal(Color newColor, Gender newGender, Weight newWeight, Weight::t_weight newMaxWeight, const string &newSpecies) ;
     Color getColor() const noexcept { return color ;}
     void setColor(const Color newColor) noexcept {color = newColor ; }
     void dump () const noexcept override ;
 protected:
-    friend class Weight ;
-    Color color = Color::UNKOWN_COLOR ;
+    Color color = Color::UNKNOWN_COLOR ;
 };
 
 

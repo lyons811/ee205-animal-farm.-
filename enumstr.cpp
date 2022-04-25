@@ -8,10 +8,13 @@
 /// @author Lyon Singleton <lyonws@hawaii.edu>
 /// @date   1_April_2022
 ///////////////////////////////////////////////////////////////////////////////
-#include "catDatabase.h"
+#include "Animal.h"
 #include "enumstr.h"
 #include "Cat.h"
 #include <iostream>
+#include "Mammal.h"
+#include "config.h"
+
 using namespace std ;
 
 
@@ -55,20 +58,28 @@ const char* breedName( enum Breed breed) {
 const char* ColorToString( enum Color color) {
 
     switch (color) {
-        case BLACK :
+        case Color::BLACK :
             return "Black" ;
-        case WHITE :
+        case Color::WHITE :
             return "White" ;
-        case RED :
+        case Color::RED :
             return "Red" ;
-        case BLUE :
+        case Color::BLUE :
             return "Blue" ;
-        case GREEN :
+        case Color::GREEN :
             return "Green" ;
-        case PINK :
-            return "Pink" ;
-        case UNKOWN_COLOR:
+        case Color::BROWN :
+            return "Brown" ;
+        case Color::UNKNOWN_COLOR:
             return "Unknown Color" ;
+        case Color::CINNAMON :
+            return "Cinnamon" ;
+        case Color::CALICO :
+            return "Calico" ;
+        case Color::GINGER :
+            return "Ginger" ;
+        case Color::CREAM :
+            return "Cream" ;
         default :
             return "Invalid" ;
     }

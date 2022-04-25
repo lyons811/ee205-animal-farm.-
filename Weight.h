@@ -13,7 +13,7 @@
 
 #include <string>
 #include <ostream>
-#include "Animal.h"
+
 
 using namespace std ;
 
@@ -64,7 +64,7 @@ public:
 
 private:
     friend class  Mammal ;
-    friend class Animal ;
+    friend class  Animal ;
     void setMaxWeight(float newMaxWeight);
     bool blsKnown = false ;
     bool bHasMax = false ;

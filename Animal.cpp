@@ -16,6 +16,8 @@
 #include <stdexcept>
 #include <iostream>
 #include <iomanip>
+#include <utility>
+#include "Cat.h"
 
 const string Animal::KINGDOM_NAME = "Animalia";
 
@@ -26,7 +28,7 @@ Animal::Animal(Weight::t_weight newMaxWeight, const string &newClassification, c
     Weight setMaxWeight(newMaxWeight) ;
 }
 
-Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
+Animal::Animal(const Gender newGender, const Weight newWeight, const Weight::t_weight newMaxWeight,
                const string &newClassification, const string &newSpecies) {
 
     Animal::setGender(newGender) ;
@@ -57,11 +59,18 @@ Weight Animal::getWeight() const noexcept {
     return weight ;
 }
 
-void Animal::setWeight(const Weight::t_weight newWeight) {
+void Animal::setWeight(const Weight newWeight) {
     weight = newWeight ;
 }
 
 void Animal::dump() const noexcept {
+    Node::dump() ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "this " ) << this << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "kingdom " ) << getKingdom() << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "classification " ) << getClassification() << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "species " ) << getSpecies() << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "gender " ) << getGender()  << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "weight " ) << (to_string(getWeight().getWeight(Weight::Pound)) + string( " out of ") + to_string(Weight::convertWeight(getWeight().getMaxWeight(), getWeight().getWeightUnit(), Weight::Pound)) + "Pounds") << endl;
 
 }
 
@@ -93,7 +102,19 @@ bool Animal::validateSpecies(const string &checkSpecies) noexcept {
 }
 
 void Animal::setGender(const Gender newGender) {
-    gender = newGender ;
+    if(gender == UNKNOWN_GENDER) {
+        gender = newGender ;
+    }
 }
 
 
+
+void Animal::setSpecies(string newSpecies) {
+species = move(newSpecies) ;
+}
+
+Animal::Animal() = default;
+
+Animal::Animal(Gender gender) {
+this->gender = gender ;
+}

@@ -11,13 +11,14 @@
 
 #pragma once
 #include <iostream>
-#include "Animal.h"
 #include "Node.h"
 
 
 
 class List {
 public:
+    friend class Node ;
+
     bool empty() const noexcept ;
     unsigned int size() const noexcept ;
     bool isIn(Node *aNode) const ;

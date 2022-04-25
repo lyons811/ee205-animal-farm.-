@@ -10,19 +10,22 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include <iostream>
-#include "List.h"
-#include "SinglyLinkedList.h"
 #include "config.h"
+
 using namespace  std ;
 
 class Node {
     friend class List;
     friend class SinglyLinkedList;
+    friend class Animal ;
 
 public:
     virtual void dump () const {
         FORMAT_LINE_FOR_DUMP( "Node", "this " ) << this << endl ;
         FORMAT_LINE_FOR_DUMP( "Node", "next " ) << next << endl ;
+
+
+
     }
     virtual  bool validate() const noexcept {
         if (next == nullptr) {

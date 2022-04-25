@@ -9,6 +9,7 @@
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "SinglyLinkedList.h"
+
 using namespace  std ;
 SinglyLinkedList::SinglyLinkedList() {
 }
@@ -64,14 +65,23 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
     }
     for(int i = 0; i < count ; i++ ) {
         newNode->next = currentNode->next ;
-        currentNode->next = newNode ;
     }
+    currentNode->next = newNode ;
 }
 
 void SinglyLinkedList::dump() const noexcept {
+    cout << "SinglyLinkedList: head=[" << head << "]" << endl;
+    Node *curr = head ;
+    for (int i = 0; i < count; i++) {
+        cout << "=============================================================================" << endl;
+        curr->dump() ;
+        curr = curr->next ;
+    }
 
 }
-
 bool SinglyLinkedList::validate() const noexcept {
-    return false;
+    if(!empty()) {
+        return true ;
+    }
+    return false ;
 }

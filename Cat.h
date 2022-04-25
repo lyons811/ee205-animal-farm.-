@@ -11,66 +11,41 @@
 #pragma once
 
 #include "config.h"
-
+#include <iostream>
 #include "enumstr.h"
 #include "Weight.h"
 #include <string>
+#include "Mammal.h"
+#include "Animal.h"
+
 #define MAX_CAT_NAME 50
 using namespace std;
 
 
-class Cat {
-
-protected:
-    char name[MAX_CAT_NAME] ;
-    enum Gender gender ;
-    enum Breed breed ;
-    bool isfixed ;
-    Weight::t_weight weight ;
-
+class Cat : public Mammal {
 public:
-    Cat* next ;
-
-private:
-    void zeroOutMemberData();
-
-public:
-    Cat();
-    Cat(const char *newName, Gender newGender, Breed newBreed, Weight newWeight) ;
-    virtual ~Cat();
-
-public:
-    const char *getName() const noexcept ;
-    void setName(const char* newName) ;
-    Gender getGender() const noexcept ;
-    Breed getBreed() const noexcept ;
-    bool isFixed() const noexcept ;
-    void fixCat() noexcept ;
-    Weight::t_weight getWeight() const noexcept ;
-    void setWeight(Weight newWeight) ;
+    explicit Cat(const string& newName) : Mammal(MAX_WEIGHT, SPECIES_NAME){
+        if(!validateName(newName)) {
+            throw out_of_range(PROGRAM_NAME ": Cat has to have a name!") ;
+        }
+        name = newName ;
+        isCatFixed = false ;
+    }
+    Cat (const string &newName, Color newColor, bool newIsFixed, Gender newGender, Weight::t_weight newWeight) ;
+    string getName() const noexcept ;
+    bool isFixed () const noexcept ;
+    void fixCat () noexcept ;
+    string speak () const noexcept override ;
+    void dump () const noexcept override ;
+    bool validate () const noexcept override ;
+    static bool validateName(const string &newName) ;
+    static const string& SPECIES_NAME ;
     static const Weight::t_weight MAX_WEIGHT ;
-    static const string SPECIES_NAME ;
-
-
 protected:
+    string name ;
+    bool isCatFixed  ;
 
-public:
-    void setGender(Gender newGender);
-    void setBreed(Breed newBreed);
-
-public:
-    bool print() const noexcept ;
-    bool validate() const noexcept ;
-
-public:
-    static bool validateName(const char* newName) ;
-    static bool validateGender(Gender NewGender) ;
-    static bool validateBreed(Breed newBreed) ;
-    static bool validateWeight(Weight newWeight) ;
-
-
-
-};
+} ;
 
 
 

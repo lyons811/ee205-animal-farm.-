@@ -11,22 +11,32 @@
 #include "Mammal.h"
 #include "Weight.h"
 
-const string Mammal::MAMMAL_NAME = "Mammilian";
+const string Mammal::MAMMAL_NAME = "Mammalian";
 
 
 
-Mammal::Mammal(const Color newColor, const Gender newGender, const Weight::t_weight newWeight,
-               const Weight::t_weight newMaxWeight, const string &newSpecies) {
-color = newColor ;
-setGender(newGender) ;
-setWeight(newWeight) ;
-Weight setMaxWeight(newMaxWeight) ;
+Mammal::Mammal(const Color newColor, const Gender newGender, const Weight newWeight,
+               const Weight::t_weight newMaxWeight, const string &newSpecies) : Animal(UNKNOWN_GENDER) {
+    color = newColor ;
+    setGender(newGender) ;
+    setWeight(newWeight) ;
+    Weight setMaxWeight(newMaxWeight) ;
 }
 
-Mammal::Mammal(Weight::t_weight newMaxWeight, const string &newSpecies) {
-Animal::getSpecies() = newSpecies ;
+Mammal::Mammal(const Weight::t_weight newMaxWeight, const string& newSpecies)  {
+    Weight setMaxWeight(newMaxWeight) ;
+    Animal::setSpecies(newSpecies) ;
+
 }
 
 void Mammal::dump() const noexcept {
-    Animal::dump();
+    Animal::dump() ;
+    FORMAT_LINE_FOR_DUMP( "Mammal", "color " ) << ColorToString(getColor()) << endl ;
+
 }
+
+
+
+
+
+
