@@ -69,8 +69,8 @@ void Animal::dump() const noexcept {
     FORMAT_LINE_FOR_DUMP( "Animal", "kingdom " ) << getKingdom() << endl ;
     FORMAT_LINE_FOR_DUMP( "Animal", "classification " ) << getClassification() << endl ;
     FORMAT_LINE_FOR_DUMP( "Animal", "species " ) << getSpecies() << endl ;
-    FORMAT_LINE_FOR_DUMP( "Animal", "gender " ) << getGender()  << endl ;
-    FORMAT_LINE_FOR_DUMP( "Animal", "weight " ) << (to_string(getWeight().getWeight(Weight::Pound)) + string( " out of ") + to_string(Weight::convertWeight(getWeight().getMaxWeight(), getWeight().getWeightUnit(), Weight::Pound)) + "Pounds") << endl;
+    FORMAT_LINE_FOR_DUMP( "Animal", "gender " ) << genderName(getGender())  << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "weight " ) << (to_string(getWeight().getWeight(Weight::Pound)) + string( " out of ") + to_string(Cat::maxWeight) +  string(" Pounds")) << endl; // Cant find a way to return maxWeight??? SHould work.
 
 }
 

@@ -53,6 +53,7 @@ float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Wei
             pounds = fromSlugToPound(fromWeight);
             break;
         case Pound :
+            pounds = fromWeight ;
             break ;
     }
     // convert to desired unit
@@ -62,6 +63,7 @@ float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Wei
         case SLUG :
             return fromPoundToSlug(pounds);
         case Pound :
+            return pounds ;
             break ;
     }
 

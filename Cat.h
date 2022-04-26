@@ -24,7 +24,7 @@ using namespace std;
 
 class Cat : public Mammal {
 public:
-    explicit Cat(const string& newName) : Mammal(MAX_WEIGHT, SPECIES_NAME){
+    explicit Cat(const string& newName) : Mammal(maxWeight, SPECIES_NAME){
         if(!validateName(newName)) {
             throw out_of_range(PROGRAM_NAME ": Cat has to have a name!") ;
         }
@@ -40,7 +40,7 @@ public:
     bool validate () const noexcept override ;
     static bool validateName(const string &newName) ;
     static const string& SPECIES_NAME ;
-    static const Weight::t_weight MAX_WEIGHT ;
+    static const Weight::t_weight maxWeight ;
 protected:
     string name ;
     bool isCatFixed  ;

@@ -19,7 +19,7 @@ using namespace std ;
 
 
 const string& Cat::SPECIES_NAME = "Felis Catus";
-const Weight::t_weight Cat::MAX_WEIGHT = 40;
+const Weight::t_weight Cat::maxWeight = 40;
 
 
 bool Cat::isFixed() const noexcept {
@@ -52,7 +52,7 @@ void Cat::dump() const noexcept {
 }
 
 Cat::Cat(const string &newName, const Color newColor, const bool newIsFixed, const Gender newGender,
-         const Weight::t_weight newWeight) : Mammal(MAX_WEIGHT, SPECIES_NAME){
+         const Weight::t_weight newWeight) : Mammal(maxWeight, SPECIES_NAME){
     name = newName ;
     weight = Weight(newWeight) ;
     isCatFixed = newIsFixed ;
